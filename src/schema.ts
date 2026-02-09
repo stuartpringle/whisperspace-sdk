@@ -24,14 +24,12 @@ export const CharacterRecordV1Schema = {
     level: { type: "number" },
     attributes: {
       type: "object",
-      required: ["phys", "dex", "int", "will", "cha", "emp"],
+      required: ["phys", "ref", "soc", "ment"],
       properties: {
         phys: { type: "number" },
-        dex: { type: "number" },
-        int: { type: "number" },
-        will: { type: "number" },
-        cha: { type: "number" },
-        emp: { type: "number" },
+        ref: { type: "number" },
+        soc: { type: "number" },
+        ment: { type: "number" },
       },
       additionalProperties: false,
     },

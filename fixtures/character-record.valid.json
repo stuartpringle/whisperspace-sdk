@@ -6,11 +6,9 @@
   "level": 1,
   "attributes": {
     "phys": 1,
-    "dex": 2,
-    "int": 3,
-    "will": 2,
-    "cha": 1,
-    "emp": 0
+    "ref": 2,
+    "soc": 1,
+    "ment": 3
   },
   "skills": [
     { "key": "athletics", "label": "Athletics", "rank": 2 },

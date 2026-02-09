@@ -15,6 +15,9 @@ The **authoritative** character storage schema lives here.
 - JSON Schema (file): `schema/character-record.v1.json`
 - Validator: `validateCharacterRecordV1`
 
+Attributes (v1):
+- `phys`, `ref`, `soc`, `ment`
+
 ```ts
 import {
   CharacterRecordV1Schema,

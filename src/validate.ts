@@ -5,7 +5,7 @@ export type ValidationResult = {
   errors: string[];
 };
 
-const REQUIRED_ATTRIBUTE_KEYS = ["phys", "dex", "int", "will", "cha", "emp"] as const;
+const REQUIRED_ATTRIBUTE_KEYS = ["phys", "ref", "soc", "ment"] as const;
 const ALLOWED_GEAR_TYPES = ["weapon", "armour", "item", "cyberware", "narcotic", "hacker_gear"] as const;
 
 function isRecord(value: unknown): value is Record<string, unknown> {

@@ -91,11 +91,9 @@ export type CharacterSheetV1 = {
 
 export type CharacterRecordAttributeKey =
   | "phys"
-  | "dex"
-  | "int"
-  | "will"
-  | "cha"
-  | "emp";
+  | "ref"
+  | "soc"
+  | "ment";
 
 export type CharacterRecordSkill = {
   key: string;
