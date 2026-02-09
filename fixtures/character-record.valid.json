@@ -1,23 +1,28 @@
 {
   "id": "00000000-0000-4000-8000-000000000000",
   "name": "Nyx",
-  "concept": "Street doc",
   "background": "Former corp medic",
-  "level": 1,
+  "motivation": "Keep the crew alive",
   "attributes": {
     "phys": 1,
     "ref": 2,
     "soc": 1,
     "ment": 3
   },
-  "skills": [
-    { "key": "athletics", "label": "Athletics", "rank": 2 },
-    { "key": "medicine", "label": "Medicine", "rank": 3, "focus": "education" }
+  "skills": {
+    "athletics": 2,
+    "medicine": 3
+  },
+  "stress": { "current": 2, "cuf": 6, "cufLoss": 0 },
+  "wounds": { "light": 0, "moderate": 0, "heavy": 0 },
+  "weapons": [
+    { "id": "weapon-1", "name": "Shotgun", "skillId": "weapons_medium", "useDC": 8, "damage": 4 }
   ],
-  "gear": [
-    { "id": "gear-1", "name": "Shotgun", "type": "weapon" },
-    { "id": "gear-2", "name": "Armour Jacket", "type": "armour", "tags": ["light"], "notes": "scuffed" }
+  "armour": { "name": "Armour Jacket", "protection": 2, "durability": { "current": 3, "max": 3 } },
+  "inventory": [
+    { "id": "item-1", "type": "item", "name": "Medkit", "quantity": 1 }
   ],
+  "credits": 200,
   "notes": "",
   "createdAt": "2026-02-01T00:00:00.000Z",
   "updatedAt": "2026-02-01T00:00:00.000Z",

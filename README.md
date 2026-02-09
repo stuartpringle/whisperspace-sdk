@@ -18,6 +18,12 @@ The **authoritative** character storage schema lives here.
 Attributes (v1):
 - `phys`, `ref`, `soc`, `ment`
 
+Skills (v1):
+- Map of `skillId -> rank` (number)
+
+Identity (v1):
+- `name`, `background`, `motivation`
+
 ```ts
 import {
   CharacterRecordV1Schema,

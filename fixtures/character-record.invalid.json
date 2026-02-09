@@ -1,21 +1,17 @@
 {
   "id": 123,
   "name": "",
-  "concept": "",
   "background": "",
-  "level": "one",
+  "motivation": 5,
   "attributes": {
     "phys": 1,
     "ref": "bad",
-    "soc": 0,
-    "ment": 2
+    "soc": 0
   },
   "skills": [
     { "key": "athletics", "label": "Athletics" }
   ],
-  "gear": [
-    { "id": "gear-1", "name": "Mystery", "type": "unknown" }
-  ],
+  "weapons": "nope",
   "notes": 5,
   "createdAt": "2026-02-01T00:00:00.000Z",
   "updatedAt": "2026-02-01T00:00:00.000Z",
