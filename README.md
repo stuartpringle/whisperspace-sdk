@@ -1,11 +1,23 @@
 # Whisperspace SDK
 
-Client utilities and base URLs for Whisperspace services.
+Client utilities and canonical schemas for Whisperspace services.
 
 ## Base URLs
 - Rules API: `https://rules-api.whisperspace.com/latest`
 - Calc API: `https://rules-api.whisperspace.com/calc`
 - Character API: `https://rules-api.whisperspace.com/character-api`
+
+## Canonical Schema
+The **authoritative** character storage schema lives here.
+
+- Type: `CharacterRecordV1`
+- JSON Schema: `CharacterRecordV1Schema`
+
+```ts
+import { CharacterRecordV1Schema, type CharacterRecordV1 } from "@whisperspace/sdk";
+```
+
+All clients (builder, API) should validate or align with this schema.
 
 ## Usage
 ```ts

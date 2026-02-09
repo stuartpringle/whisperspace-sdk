@@ -88,3 +88,41 @@ export type CharacterSheetV1 = {
   feats?: Feat[];
   notes?: string;
 };
+
+export type CharacterRecordAttributeKey =
+  | "phys"
+  | "dex"
+  | "int"
+  | "will"
+  | "cha"
+  | "emp";
+
+export type CharacterRecordSkill = {
+  key: string;
+  label: string;
+  rank: number;
+  focus?: string;
+};
+
+export type CharacterRecordGear = {
+  id: string;
+  name: string;
+  type: "weapon" | "armour" | "item" | "cyberware" | "narcotic" | "hacker_gear";
+  tags?: string[];
+  notes?: string;
+};
+
+export type CharacterRecordV1 = {
+  id: string;
+  name: string;
+  concept: string;
+  background: string;
+  level: number;
+  attributes: Record<CharacterRecordAttributeKey, number>;
+  skills: CharacterRecordSkill[];
+  gear: CharacterRecordGear[];
+  notes: string;
+  createdAt: string;
+  updatedAt: string;
+  version: 1;
+};
