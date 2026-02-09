@@ -20,7 +20,8 @@
   ],
   "armour": { "name": "Armour Jacket", "protection": 2, "durability": { "current": 3, "max": 3 } },
   "inventory": [
-    { "id": "item-1", "type": "item", "name": "Medkit", "quantity": 1 }
+    { "id": "item-1", "type": "item", "name": "Medkit", "quantity": 1 },
+    { "id": "gear-1", "type": "hacker_gear", "name": "MonoTap", "systemTierAccess": 1, "maxSoftwareTier": 1 }
   ],
   "credits": 200,
   "notes": "",

@@ -7,7 +7,7 @@ export type ValidationResult = {
 
 const REQUIRED_ATTRIBUTE_KEYS = ["phys", "ref", "soc", "ment"] as const;
 const ALLOWED_LEARNING_FOCUS = ["combat", "education", "vehicles"] as const;
-const ALLOWED_INVENTORY_TYPES = ["item", "cyberware", "narcotics"] as const;
+const ALLOWED_INVENTORY_TYPES = ["item", "cyberware", "narcotics", "hacker_gear"] as const;
 const ALLOWED_TOP_LEVEL = [
   "id",
   "name",

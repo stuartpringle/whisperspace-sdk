@@ -20,9 +20,13 @@ Attributes (v1):
 
 Skills (v1):
 - Map of `skillId -> rank` (number)
+  - Skill IDs are defined by `https://rules-api.whisperspace.com/latest/skills.json`
 
 Identity (v1):
 - `name`, `background`, `motivation`
+
+Inventory item types:
+- `item`, `cyberware`, `narcotics`, `hacker_gear`
 
 ```ts
 import {

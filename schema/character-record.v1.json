@@ -97,7 +97,7 @@
         "required": ["type"],
         "properties": {
           "id": { "type": "string" },
-          "type": { "type": "string", "enum": ["item", "cyberware", "narcotics"] },
+          "type": { "type": "string", "enum": ["item", "cyberware", "narcotics", "hacker_gear"] },
           "name": { "type": "string" },
           "quantity": { "type": "number" },
           "uses": { "type": "string" },
@@ -110,7 +110,11 @@
           "requirements": { "type": "string" },
           "physicalImpact": { "type": "string" },
           "addictionScore": { "type": "number" },
-          "legality": { "type": "string" }
+          "legality": { "type": "string" },
+          "notes": { "type": "string" },
+          "systemTierAccess": { "type": "number" },
+          "maxSoftwareTier": { "type": "number" },
+          "tier": { "type": "number" }
         },
         "additionalProperties": false
       }

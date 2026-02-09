@@ -69,6 +69,18 @@ export type InventoryItem =
       effect?: string;
       cost?: number;
       statusEffects?: string;
+    }
+  | {
+      id?: string;
+      type: "hacker_gear";
+      name?: string;
+      quantity?: number;
+      bulk?: number;
+      cost?: number;
+      notes?: string;
+      systemTierAccess?: number;
+      maxSoftwareTier?: number;
+      tier?: number;
     };
 
 export type CharacterSheetV1 = {
