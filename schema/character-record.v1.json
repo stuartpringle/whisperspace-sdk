@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Whisperspace Character Record V1",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "concept",
+    "background",
+    "level",
+    "attributes",
+    "skills",
+    "gear",
+    "notes",
+    "createdAt",
+    "updatedAt",
+    "version"
+  ],
+  "properties": {
+    "id": { "type": "string" },
+    "name": { "type": "string" },
+    "concept": { "type": "string" },
+    "background": { "type": "string" },
+    "level": { "type": "number" },
+    "attributes": {
+      "type": "object",
+      "required": ["phys", "dex", "int", "will", "cha", "emp"],
+      "properties": {
+        "phys": { "type": "number" },
+        "dex": { "type": "number" },
+        "int": { "type": "number" },
+        "will": { "type": "number" },
+        "cha": { "type": "number" },
+        "emp": { "type": "number" }
+      },
+      "additionalProperties": false
+    },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["key", "label", "rank"],
+        "properties": {
+          "key": { "type": "string" },
+          "label": { "type": "string" },
+          "rank": { "type": "number" },
+          "focus": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "gear": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "type"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "type": {
+            "type": "string",
+            "enum": ["weapon", "armour", "item", "cyberware", "narcotic", "hacker_gear"]
+          },
+          "tags": { "type": "array", "items": { "type": "string" } },
+          "notes": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "notes": { "type": "string" },
+    "createdAt": { "type": "string" },
+    "updatedAt": { "type": "string" },
+    "version": { "type": "number", "enum": [1] }
+  },
+  "additionalProperties": false
+}

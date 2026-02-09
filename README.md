@@ -11,7 +11,8 @@ Client utilities and canonical schemas for Whisperspace services.
 The **authoritative** character storage schema lives here.
 
 - Type: `CharacterRecordV1`
-- JSON Schema: `CharacterRecordV1Schema`
+- JSON Schema (TS): `CharacterRecordV1Schema`
+- JSON Schema (file): `schema/character-record.v1.json`
 - Validator: `validateCharacterRecordV1`
 
 ```ts

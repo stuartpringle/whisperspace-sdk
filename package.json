@@ -3,7 +3,13 @@
   "version": "0.1.0",
   "type": "module",
   "private": true,
+  "scripts": {
+    "test:schema": "tsx scripts/validate-fixtures.ts"
+  },
   "exports": {
     ".": "./src/index.ts"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2"
   }
 }

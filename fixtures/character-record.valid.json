@@ -1,0 +1,27 @@
+{
+  "id": "00000000-0000-4000-8000-000000000000",
+  "name": "Nyx",
+  "concept": "Street doc",
+  "background": "Former corp medic",
+  "level": 1,
+  "attributes": {
+    "phys": 1,
+    "dex": 2,
+    "int": 3,
+    "will": 2,
+    "cha": 1,
+    "emp": 0
+  },
+  "skills": [
+    { "key": "athletics", "label": "Athletics", "rank": 2 },
+    { "key": "medicine", "label": "Medicine", "rank": 3, "focus": "education" }
+  ],
+  "gear": [
+    { "id": "gear-1", "name": "Shotgun", "type": "weapon" },
+    { "id": "gear-2", "name": "Armour Jacket", "type": "armour", "tags": ["light"], "notes": "scuffed" }
+  ],
+  "notes": "",
+  "createdAt": "2026-02-01T00:00:00.000Z",
+  "updatedAt": "2026-02-01T00:00:00.000Z",
+  "version": 1
+}
