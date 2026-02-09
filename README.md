@@ -12,9 +12,14 @@ The **authoritative** character storage schema lives here.
 
 - Type: `CharacterRecordV1`
 - JSON Schema: `CharacterRecordV1Schema`
+- Validator: `validateCharacterRecordV1`
 
 ```ts
-import { CharacterRecordV1Schema, type CharacterRecordV1 } from "@whisperspace/sdk";
+import {
+  CharacterRecordV1Schema,
+  type CharacterRecordV1,
+  validateCharacterRecordV1,
+} from "@whisperspace/sdk";
 ```
 
 All clients (builder, API) should validate or align with this schema.
