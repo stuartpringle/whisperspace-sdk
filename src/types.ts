@@ -1,4 +1,5 @@
 export type Armor = {
+  id?: string;
   name?: string;
   keywords?: string[];
   keywordParams?: Record<string, string | number | boolean>;
@@ -120,6 +121,8 @@ export type CharacterRecordV1 = {
   wounds?: { light?: number; moderate?: number; heavy?: number };
   weapons?: Weapon[];
   armour?: Armor;
+  armours?: Armor[];
+  equippedArmourId?: string;
   inventory?: InventoryItem[];
   credits?: number;
   feats?: Feat[];

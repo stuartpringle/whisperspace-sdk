@@ -70,6 +70,7 @@ export const CharacterRecordV1Schema = {
     armour: {
       type: "object",
       properties: {
+        id: { type: "string" },
         name: { type: "string" },
         keywords: { type: "array", items: { type: "string" } },
         keywordParams: { type: "object", additionalProperties: { type: ["string", "number", "boolean"] } },
@@ -89,6 +90,33 @@ export const CharacterRecordV1Schema = {
       },
       additionalProperties: false,
     },
+    armours: {
+      type: "array",
+      items: {
+        type: "object",
+        properties: {
+          id: { type: "string" },
+          name: { type: "string" },
+          keywords: { type: "array", items: { type: "string" } },
+          keywordParams: { type: "object", additionalProperties: { type: ["string", "number", "boolean"] } },
+          protection: { type: "number" },
+          durability: {
+            type: "object",
+            properties: {
+              current: { type: "number" },
+              max: { type: "number" },
+            },
+            additionalProperties: false,
+          },
+          bulk: { type: "number" },
+          req: { type: "string" },
+          cost: { type: "number" },
+          special: { type: "string" },
+        },
+        additionalProperties: false,
+      },
+    },
+    equippedArmourId: { type: "string" },
     credits: { type: "number" },
     inventory: {
       type: "array",
