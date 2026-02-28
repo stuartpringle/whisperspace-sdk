@@ -38,6 +38,19 @@ import {
 
 All clients (builder, API) should validate or align with this schema.
 
+## Recent Schema Additions
+- Multi-armour support:
+  - `armours: Armor[]`
+  - `equippedArmourId: string`
+- Nanomancy support:
+  - `nanomancy.primaryField`: `"burner" | "physic" | "kinetic"`
+  - `nanomancy.knownEffects`: `string[]`
+  - `nanomancy.preferredND`: `number`
+
+These fields are now part of both:
+- `src/schema.ts` (`CharacterRecordV1Schema`)
+- `schema/character-record.v1.json`
+
 ## Usage
 ```ts
 import { RULES_API_BASE, CALC_API_BASE, CHARACTER_API_BASE } from "@whisperspace/sdk";
@@ -45,3 +58,12 @@ import { RULES_API_BASE, CALC_API_BASE, CHARACTER_API_BASE } from "@whisperspace
 
 ## Status
 Active
+
+## Integration Checklist
+- Public entrypoints (URLs) and environment variables.
+- API endpoints or interfaces exposed to other repos.
+- Schema/contract references and versions.
+- Auth expectations (keys, cookies, tokens, headers).
+- Build/publish commands and deployment steps.
+- Local dev setup and dependencies.
+- Known integration pitfalls or gotchas.
