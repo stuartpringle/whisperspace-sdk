@@ -108,7 +108,14 @@ export type CharacterRecordAttributeKey =
   | "soc"
   | "ment";
 
+export type NanomancyState = {
+  primaryField?: "burner" | "physic" | "kinetic";
+  knownEffects?: string[];
+  preferredND?: number;
+};
+
 export type CharacterRecordV1 = {
+
   id: string;
   name: string;
   background?: string;
@@ -123,6 +130,7 @@ export type CharacterRecordV1 = {
   armour?: Armor;
   armours?: Armor[];
   equippedArmourId?: string;
+  nanomancy?: NanomancyState;
   inventory?: InventoryItem[];
   credits?: number;
   feats?: Feat[];

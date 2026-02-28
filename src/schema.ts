@@ -117,6 +117,15 @@ export const CharacterRecordV1Schema = {
       },
     },
     equippedArmourId: { type: "string" },
+    nanomancy: {
+      type: "object",
+      properties: {
+        primaryField: { type: "string", enum: ["burner", "physic", "kinetic"] },
+        knownEffects: { type: "array", items: { type: "string" } },
+        preferredND: { type: "number" },
+      },
+      additionalProperties: false,
+    },
     credits: { type: "number" },
     inventory: {
       type: "array",
