@@ -26,6 +26,7 @@ const ALLOWED_TOP_LEVEL = [
   "feats",
   "indomitable",
   "notes",
+  "tags",
   "createdAt",
   "updatedAt",
   "version",
@@ -53,6 +54,15 @@ export function validateCharacterRecordV1(record: CharacterRecordV1): Validation
   if (record.background != null && typeof record.background !== "string") errors.push("background must be a string");
   if (record.motivation != null && typeof record.motivation !== "string") errors.push("motivation must be a string");
   if (record.notes != null && typeof record.notes !== "string") errors.push("notes must be a string");
+  if (record.tags != null) {
+    if (!Array.isArray(record.tags)) {
+      errors.push("tags must be an array");
+    } else {
+      record.tags.forEach((tag, index) => {
+        if (typeof tag !== "string") errors.push(`tags[${index}] must be a string`);
+      });
+    }
+  }
   if (typeof record.createdAt !== "string") errors.push("createdAt must be a string");
   if (typeof record.updatedAt !== "string") errors.push("updatedAt must be a string");
   if (record.version !== 1) errors.push("version must be 1");

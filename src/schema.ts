@@ -170,6 +170,7 @@ export const CharacterRecordV1Schema = {
     },
     indomitable: { type: "boolean" },
     notes: { type: "string" },
+    tags: { type: "array", items: { type: "string" } },
     createdAt: { type: "string" },
     updatedAt: { type: "string" },
     version: { type: "number", enum: [1] },

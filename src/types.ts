@@ -136,6 +136,7 @@ export type CharacterRecordV1 = {
   feats?: Feat[];
   indomitable?: boolean;
   notes?: string;
+  tags?: string[];
   createdAt: string;
   updatedAt: string;
   version: 1;

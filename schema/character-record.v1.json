@@ -304,6 +304,12 @@
     "notes": {
       "type": "string"
     },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
     "createdAt": {
       "type": "string"
     },

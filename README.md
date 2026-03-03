@@ -46,6 +46,9 @@ All clients (builder, API) should validate or align with this schema.
   - `nanomancy.primaryField`: `"burner" | "physic" | "kinetic"`
   - `nanomancy.knownEffects`: `string[]`
   - `nanomancy.preferredND`: `number`
+- Character organization tags:
+  - `tags: string[]` (optional)
+  - Intended for cross-device list/group organization (for example campaign or NPC labels).
 
 These fields are now part of both:
 - `src/schema.ts` (`CharacterRecordV1Schema`)

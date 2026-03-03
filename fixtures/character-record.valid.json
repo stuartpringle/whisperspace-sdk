@@ -23,6 +23,7 @@
     { "id": "item-1", "type": "item", "name": "Medkit", "quantity": 1 },
     { "id": "gear-1", "type": "hacker_gear", "name": "MonoTap", "systemTierAccess": 1, "maxSoftwareTier": 1 }
   ],
+  "tags": ["npc", "campaign-alpha"],
   "credits": 200,
   "notes": "",
   "createdAt": "2026-02-01T00:00:00.000Z",
