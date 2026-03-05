@@ -5,3 +5,4 @@ export * from "./roll";
 export * from "./schema";
 export * from "./validate";
 export * from "./types";
+export * from "./platformClient";

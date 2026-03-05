@@ -59,6 +59,28 @@ These fields are now part of both:
 import { RULES_API_BASE, CALC_API_BASE, CHARACTER_API_BASE } from "@whisperspace/sdk";
 ```
 
+## Platform Client (ECO-005 scaffold)
+A minimal shared platform client now ships from this package to standardize cross-repo API calls.
+
+```ts
+import { createPlatformClient } from "@whisperspace/sdk/platform-client";
+
+const client = createPlatformClient();
+const meta = await client.getRulesMeta();
+const session = await client.getAuthSession();
+```
+
+Current wrapper coverage:
+- rules: `getRulesMeta`, `getRulesJson`
+- calc: `getCalcSchemasIndex`, `calcPost`
+- character: `getCharacterSchema`, `listCharacters`, `getCharacter`, `createCharacter`, `updateCharacter`, `deleteCharacter`
+- auth: `getAuthSession`, `getAuthCsrf`
+
+Integration expectations:
+- Defaults target `rules-api.whisperspace.com` endpoints and use `credentials: "include"` for cookie auth flows.
+- State-changing character methods accept CSRF header input where required (`X-CSRF-Token`).
+- Path/boundary handling normalizes legacy base URL forms (`/latest`, `/calc`) to canonical routes (`/rules-api/latest`, `/rules-api/calc`).
+
 ## Status
 Active
 

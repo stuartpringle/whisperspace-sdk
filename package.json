@@ -7,7 +7,8 @@
     "test:schema": "tsx scripts/validate-fixtures.ts"
   },
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./src/index.ts",
+    "./platform-client": "./src/platformClient.ts"
   },
   "devDependencies": {
     "tsx": "^4.19.2"
