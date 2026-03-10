@@ -74,7 +74,8 @@ Current wrapper coverage:
 - rules: `getRulesMeta`, `getRulesJson`
 - calc: `getCalcSchemasIndex`, `calcPost`
 - character: `getCharacterSchema`, `listCharacters`, `getCharacter`, `createCharacter`, `updateCharacter`, `deleteCharacter`
-- auth: `getAuthSession`, `getAuthCsrf`
+- auth: `getAuthSession`, `getAuthCsrf`, `authObrGuest`
+- OBR instance sync: `getObrInstance`, `upsertObrInstance`
 
 Integration expectations:
 - Defaults target `rules-api.whisperspace.com` endpoints and use `credentials: "include"` for cookie auth flows.

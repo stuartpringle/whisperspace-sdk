@@ -44,6 +44,10 @@ export type CharacterUpsertOptions = {
   ifUnmodifiedSince?: string;
 };
 
+export type ObrInstanceUpsertOptions = {
+  writeKey?: string;
+};
+
 export type PlatformClient = {
   getRulesMeta: () => Promise<any>;
   getRulesJson: () => Promise<any>;
@@ -64,6 +68,14 @@ export type PlatformClient = {
     options?: CharacterUpsertOptions
   ) => Promise<CharacterRecordV1>;
   deleteCharacter: (id: string, csrfToken?: string) => Promise<{ ok: boolean }>;
+  authObrGuest: (roomId: string) => Promise<any>;
+  getObrInstance: (characterInstanceId: string, roomId: string) => Promise<any>;
+  upsertObrInstance: (
+    characterInstanceId: string,
+    roomId: string,
+    sheet: unknown,
+    options?: ObrInstanceUpsertOptions
+  ) => Promise<any>;
 };
 
 function trimTrailingSlash(value: string): string {
@@ -167,6 +179,12 @@ export function createPlatformClient(options: PlatformClientOptions = {}): Platf
     return `${path}${sep}visibility=${visibility}`;
   }
 
+  function obrInstancePath(characterInstanceId: string, roomId: string): string {
+    const encodedId = encodeURIComponent(characterInstanceId);
+    const encodedRoomId = encodeURIComponent(roomId);
+    return `obr-instance/${encodedId}?roomId=${encodedRoomId}`;
+  }
+
   return {
     getRulesMeta: () => requestJson("GET", buildUrl(rulesApiBase, "meta.json")),
     getRulesJson: () => requestJson("GET", buildUrl(rulesApiBase, "rules.json")),
@@ -218,6 +236,27 @@ export function createPlatformClient(options: PlatformClientOptions = {}): Platf
         buildUrl(characterApiBase, `characters/${encodeURIComponent(id)}`),
         undefined,
         csrfToken ? { "X-CSRF-Token": csrfToken } : undefined
+      ),
+    authObrGuest: (roomId: string) =>
+      requestJson("POST", buildUrl(characterApiBase, "auth/obr-guest"), {
+        roomId,
+      }),
+    getObrInstance: (characterInstanceId: string, roomId: string) =>
+      requestJson(
+        "GET",
+        buildUrl(characterApiBase, obrInstancePath(characterInstanceId, roomId))
+      ),
+    upsertObrInstance: (
+      characterInstanceId: string,
+      roomId: string,
+      sheet: unknown,
+      options?: ObrInstanceUpsertOptions
+    ) =>
+      requestJson(
+        "PUT",
+        buildUrl(characterApiBase, obrInstancePath(characterInstanceId, roomId)),
+        { sheet },
+        options?.writeKey ? { "X-WS-OBR-Write-Key": options.writeKey } : undefined
       ),
   };
 }
